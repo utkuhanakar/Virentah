@@ -3,205 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UTKUHAN AKAR | PROJECT VIRENTAH DOSSIER</title>
-    <meta name="description" content="Official Virentah Project Dossier by Chief Researcher Utkuhan Akar. Classified tribal observation logs for Operation HAN TRIBE. ACCESS RESTRICTED.">
-    <meta name="author" content="Utkuhan Akar">
-    <link rel="stylesheet" href="style.css">
+    <title>HAN TRIBE | Official Virentah Portal</title>
+    <meta name="description" content="Survive the illusion. Discover the experiment. The official portal for HAN TRIBE by Hanak Studios.">
+    <!-- Cinematic Fonts: Cinzel for Display, Outfit for Tech details -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Outfit:wght@300;600;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="report-theme">
-    <div class="vignette"></div>
-    <div class="scanlines"></div>
+<body class="aaa-portal">
 
-    <header class="report-header">
-        <div class="container container-flex">
-            <div class="header-left">
-                <div class="terminal-tag">SYSTEM: ENCRYPTED</div>
-                <div class="serial-no">ID: OTUKAN-OKA-X99</div>
-            </div>
-            <div class="header-right">
-                <div class="researcher-signature">Chief Researcher: <span>Utkuhan Akar</span></div>
-                <div class="classification">CONFIDENTIAL // HANAK STUDIOS</div>
-            </div>
+    <!-- Audio Initialization Overlay (To fix browser autoplay policies) -->
+    <div class="audio-init-overlay" id="audio-init">
+        <div class="init-content">
+            <span class="os-tag">HANAK-OS / SYSTEM REQUIREMENT</span>
+            <h2>ESTABLISH AUDIO LINK</h2>
+            <p>For the optimal immersive experience, the atmospheric simulation requires manual initialization.</p>
+            <button class="btn btn-primary" id="btn-init-audio">INITIALIZE SYSTEM UPLINK</button>
         </div>
-    </header>
+    </div>
 
-    <div class="bio-feed-strip">
-        <div class="container container-flex">
-            <div class="ekg-container">
-                <span class="label">SUBJECT #001 VITALS [EKG]</span>
-                <svg class="ekg-svg" viewBox="0 0 100 20">
-                    <path class="ekg-path" d="M0,10 L5,10 L7,2 L10,18 L12,10 L20,10 L22,4 L25,16 L27,10 L40,10 L42,2 L45,18 L47,10 L60,10 L100,10" />
-                </svg>
+    <!-- RDR2 Style Texture Overlays -->
+    <div class="fx-noise"></div>
+    <div class="fx-vignette"></div>
+
+    <!-- Ambient Audio (Wikimedia Commons, highly reliable) -->
+    <audio id="ambient-audio" loop>
+        <source src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Rain_on_metal_roof_with_some_thunder.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="logo">HANAK STUDIOS</div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open Inventory Menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </nav>
+
+    <!-- Mysterious Inventory / Dossier Mega Menu -->
+    <div class="mega-menu" id="mega-menu">
+        <div class="menu-bg"></div>
+        <div class="menu-container">
+            <div class="menu-header">
+                <span class="os-tag">SYSTEM ID: OTUKAN-OKA-X99 // COMPENDIUM</span>
+                <span class="close-menu" id="close-menu">&times;</span>
             </div>
-            <div class="radar-container">
-                <div class="radar">
-                    <div class="radar-line"></div>
-                    <div class="blip pulse" style="top: 30%; left: 40%;"></div>
-                </div>
-                <span class="label">SECTOR SCANNER [ACTIVE]</span>
-            </div>
-            <div class="system-logs">
-                <ul id="log-list">
-                    <li>> INITIALIZING OOS-99...</li>
-                    <li>> LINK STABLE: SECTOR 1</li>
-                </ul>
+            <ul class="menu-links">
+                <li><a href="index.html" class="active"><span class="num">01.</span> THE EXPERIMENT [HOME]</a></li>
+                <li><a href="story.html"><span class="num">02.</span> MYSTIC PROPHECIES [LORE]</a></li>
+                <li><a href="tribes.html"><span class="num">03.</span> NATIVE SPECIMENS [TRIBES]</a></li>
+                <li><a href="#black-kingdom"><span class="num">04.</span> THE BLACK KINGDOM [THREAT]</a></li>
+            </ul>
+            <div class="menu-footer">
+                <p>SUBJECT #001 VITAL SIGNS: <span class="status-good">STABLE</span></p>
             </div>
         </div>
     </div>
 
-    <section class="hero-dossier">
-        <div class="grid-overlay"></div>
-        <div class="hero-image-wrap">
-            <img src="hero.png" alt="Satellite View - Sector Analysis" class="hero-feed">
-        </div>
-        <div class="hero-meta">
-            <h1 class="typewriter">PROJECT: VIRENTAH</h1>
-            <p class="subtitle">Operation: HAN TRIBE. Observer: Otukan Oka</p>
-            <div class="status-bar">
-                <div class="status-indicator alert"></div>
-                <span>ANOMALY DETECTED: BLACK KINGDOM</span>
+    <!-- Full Screen Cinematic Hero -->
+    <header class="hero-section">
+        <div class="hero-bg parallax-bg" style="background-image: url('hero.png');"></div>
+        <div class="hero-content">
+            <div class="subject-tag">PHASE 1: AWAKENING</div>
+            <h1 class="cinematic-title">HAN TRIBE</h1>
+            <p class="cinematic-subtitle">Survive the illusion. Discover the experiment.</p>
+            <div class="cta-group">
+                <a href="#dossier" class="btn btn-primary">ENTER DOSSIER</a>
+                <a href="#" class="btn btn-secondary">WISHLIST ON STEAM</a>
             </div>
         </div>
-    </section>
+        <div class="scroll-indicator">
+            <span>SCROLL TO DESCEND</span>
+            <div class="mouse"></div>
+        </div>
+    </header>
 
-    <main class="container">
-        <!-- THE ARMORY SECTION -->
-        <section class="report-section" id="armory">
-            <h2 class="section-title">THE ARMORY: TACTICAL SCHEMATICS</h2>
-            <div class="blueprint-grid">
-                <div class="blueprint reveal">
-                    <div class="bp-header">ID: KAYA-AXE-01</div>
-                    <div class="bp-visual">
-                        <div class="bp-drawing">
-                            <span class="crosshair">+</span>
-                        </div>
-                    </div>
-                    <h3>KAYA'NIN REHBERİ [BONE AXE]</h3>
-                    <p class="data-log">Kullanıcı: Elder Kaya. Materyal: İşlenmiş Kemik & Liana Bağlantısı. Etki: %40 daha hızlı kaynak toplama.</p>
+    <!-- Content Modules -->
+    <main class="content-wrapper" id="dossier">
+        
+        <section class="module text-heavy-module reveal">
+            <div class="container">
+                <div class="header-block center-text">
+                    <h2 class="section-title">THE GRAND ILLUSION</h2>
+                    <div class="divider center-divider"></div>
                 </div>
-                <div class="blueprint reveal">
-                    <div class="bp-header">ID: DORAN-SPEAR-03</div>
-                    <div class="bp-visual">
-                        <div class="bp-drawing">
-                            <span class="crosshair">+</span>
-                        </div>
-                    </div>
-                    <h3>DORAN'IN PENÇESİ [IRON SPEAR]</h3>
-                    <p class="data-log">Kullanıcı: Chief Doran. Materyal: Siyah Demir. Not: Uzun mesafe hit-detection için optimize edildi.</p>
+                <div class="lore-paragraph">
+                    <p>It begins with survival. You awaken washed ashore on what appears to be an uncharted, primeval island. Your first instincts are primitive: gather wood, strike a fire, hunt for sustenance. The dense canopy above and the tribal drums echoing from the valleys convince you that you are a castaway lost to time.</p>
+                    <p>But the island is watching.</p>
+                    <p>As you delve deeper into the ruins and earn the trust of the local factions, the harrowing truth unravels. This lush environment is not a natural landmass—it is a colossally engineered Terraforming Biosphere hidden from a decimated Earth. You are not a random soul fighting for survival; you are an <em>uncontrolled variable</em> injected into a centuries-old societal experiment.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SPECIMEN LAB SECTION -->
-        <section class="report-section" id="specimen-lab">
-            <h2 class="section-title">SPECIMEN LAB: BIOLOGICAL ARCHIVE</h2>
-            <div class="specimen-grid">
-                <div class="specimen-card reveal glass">
-                    <div class="specimen-tag">CAT: MEDICAL</div>
-                    <h3>ALOE VERA [YARA KAPATICI]</h3>
-                    <div class="dna-helix"></div>
-                    <p class="data-log">Bulunduğu Yer: S1 - Spawn Shore. Etki: Kanama durdurma ve %15 HP yenileme.</p>
+        <section class="module split-module reverse reveal">
+            <div class="text-block">
+                <span class="os-tag">FACTION ANALYSIS</span>
+                <h2 class="section-title">OBSERVED TRIBAL SPECIMENS</h2>
+                <div class="divider"></div>
+                <p>The system relies on genetically preserved human archetypes. To survive, you must navigate their delicate sociopolitical structures:</p>
+                <ul class="lore-list">
+                    <li><strong>THE GATHERERS:</strong> Favored by the 'Observers', they live in harmony with the fake ecosystem. Elder Kaya holds secrets of native medicines that can stave off the artificial infections.</li>
+                    <li><strong>THE HUNTERS:</strong> Led by Chief Doran, they act as the system's aggressive wardens. They defend the 'Sacred Borders', unknowingly protecting the concealed facility doors.</li>
+                    <li><strong>THE MYSTICS:</strong> Outcasts who deciphered the simulation's glitches as religious dogma. Their prophecies speak of a day when the "Steel Sky" will shatter.</li>
+                </ul>
+                <a href="tribes.html" class="link-animate">VIEW TRIBAL DATA &rarr;</a>
+            </div>
+            <!-- Dynamic placeholder reflecting lowpoly/stylized art style approach -->
+            <div class="image-block" style="background-color: #051010; border: 1px solid var(--accent-cyan);">
+                <div class="terminal-text-block">
+                    <p>> UPLINK: TRIBAL_CAM_03</p>
+                    <p>> SUBJECTS: 4 DETECTED</p>
+                    <p>> AGGRESSION LEVEL: ELEVATED</p>
+                    <div class="blinking-cursor"></div>
                 </div>
-                <div class="specimen-card reveal glass urgent">
-                    <div class="specimen-tag">CAT: ANOMALY</div>
-                    <h3>SIYAH KRALLIK [VIRUS]</h3>
-                    <p class="data-log">DURUM: AKTİF. Bu kabile bir virüs gibi yayılmakta. Diğer kabileleri asimile ederek yok eder.</p>
-                </div>
+                <div class="img-overlay"></div>
             </div>
         </section>
-        <section class="report-section" id="sectors">
-            <h2 class="section-title">SECTOR ANALYSIS [SITE-B]</h2>
-            <div class="data-grid">
-                <div class="data-card reveal" data-status="STABLE">
-                    <span class="sector-id">S1</span>
-                    <h3>SPAWN SHORE</h3>
-                    <p class="data-log">INITIAL ARRIVAL POINT. RESOURCE DENSITY: MODERATE. DANGER LEVEL: MINIMAL. WEATHER PARAMETERS: CLEAR (40%).</p>
+        
+        <!-- Live Threat Feed (Bio-Hybrid) -->
+        <section class="module threat-module reveal" id="black-kingdom">
+            <div class="threat-container">
+                <div class="threat-header">
+                    <span class="warning-tag">CRITICAL ALERT: OVERSIGHT PROTOCOL INITIATED</span>
+                    <h2>THE PURGE PROTOCOL [BLACK KINGDOM]</h2>
                 </div>
-                <div class="data-card reveal" data-status="CAUTION">
-                    <span class="sector-id">S3</span>
-                    <h3>DENSE JUNGLE</h3>
-                    <p class="data-log">CANOPY DENSITY: HIGH. PREDATOR ACTIVITY: PERSISTENT. STEALTH PARAMETERS REQUIRED FOR SUBJECT SURVIVAL.</p>
+                <div class="lore-paragraph mb-2">
+                    <p>The Black Kingdom is not a naturally occurring tribe—it is the system's ruthless failsafe. When a native faction advances too far or uncovers the nature of the Terraforming Vessel, the system releases the Black Kingdom.</p>
+                    <p>They are a virus designed to mimic human invasion, attacking with a pitch-black organic substance that deconstructs matter and resets the experiment's variables. As you unite the tribes against the Observers, you inadvertently accelerate the arrival of the Purge.</p>
                 </div>
-                <div class="data-card reveal" data-status="HIGH">
-                    <span class="sector-id">S4</span>
-                    <h3>SWAMP LOWLANDS</h3>
-                    <p class="data-log">TOXICITY LEVELS: ELEVATED. ANOMALY DETECTED: GIANT ANACONDA. SUBJECT DISORIENTATION OBSERVED.</p>
-                </div>
-                <div class="data-card reveal redacted" id="sector-7">
-                    <span class="sector-id">S7</span>
-                    <h3>[REDACTED]</h3>
-                    <p class="data-log">[ACCESS DENIED] DATA CORRUPTION DETECTED. ENCRYPTION LEVEL OVERRIDE REQUIRED.</p>
-                    <div class="glitch-text-hidden">FACILITY CORE: EXPERIMENT SITE ZERO</div>
+                
+                <div class="live-tracker">
+                    <div class="tracker-info">
+                        <span>INFECTION SPREAD ALONG SECTOR 4</span>
+                        <span id="threat-percent">0%</span>
+                    </div>
+                    <div class="tracker-bar">
+                        <div class="tracker-fill" id="threat-fill"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="report-section" id="subjects">
-            <h2 class="section-title">OBSERVED SOCIAL GROUPS [TRIBAL]</h2>
-            <div class="tribe-report">
-                <div class="tribe-entry reveal">
-                    <div class="entry-header">
-                        <h4>THE HUNTERS [AGGRESSIVE]</h4>
-                        <span class="vector">VECTOR: -30</span>
-                    </div>
-                    <p>Warrior-tier subjects. Highly territorial. High combat proficiency. Observation strategy: Diplomatic caution required.</p>
-                </div>
-                <div class="tribe-entry reveal">
-                    <div class="entry-header">
-                        <h4>THE GATHERERS [NEUTRAL]</h4>
-                        <span class="vector">VECTOR: 000</span>
-                    </div>
-                    <p>Resource-tier subjects. Oldest civilization. Key source of medical biological data. Subject trust established as viable.</p>
-                </div>
-                <div class="tribe-entry reveal">
-                    <div class="entry-header">
-                        <h4>THE MYSTICS [RECLUSIVE]</h4>
-                        <span class="vector">VECTOR: -50</span>
-                    </div>
-                    <p>Anomaly observers. Religious/Mythological interpretation of Experiment Operators detected. Access highly restricted.</p>
+        <!-- The Final Decision Lore Hook -->
+        <section class="module text-heavy-module reveal">
+            <div class="container container-sm text-center">
+                <span class="os-tag" style="color:var(--accent-gold);">FINAL DIRECTIVE</span>
+                <h2 class="section-title">CHOOSE THE FATE OF HUMANITY</h2>
+                <div class="divider center-divider" style="background:var(--accent-gold);"></div>
+                <p>Eventually, the path will lead you and your companions to the Bridge of the Biosphere. Facing three gates, your team must make a unanimous decision: Will you inherit the mantle of the Observers and control the illusion, trigger the self-destruct to end the captivity, or surrender your physical forms into the Hanak-OS mainframe?</p>
+                <div class="gate-icons">
+                    <div class="gate">GATE A<br>LEAD</div>
+                    <div class="gate">GATE B<br>DESTROY</div>
+                    <div class="gate">GATE C<br>ASCEND</div>
                 </div>
             </div>
         </section>
 
-        <section class="report-section" id="parameters">
-            <h2 class="section-title">VITAL SIGN PARAMETERS</h2>
-            <div class="parameter-grid">
-                <div class="param-box reveal">
-                    <label>METABOLIC RATE (HUNGER)</label>
-                    <div class="param-bar"><div class="fill" style="width: 85%;"></div></div>
-                </div>
-                <div class="param-box reveal">
-                    <label>HYDRATION LEVELS (THIRST)</label>
-                    <div class="param-bar"><div class="fill" style="width: 60%;"></div></div>
-                </div>
-                <div class="param-box reveal">
-                    <label>THERMAL HOMEOSTASIS</label>
-                    <div class="param-bar"><div class="fill" style="width: 45%;"></div></div>
-                </div>
-            </div>
-        </section>
-        <!-- THE FINAL GATES -->
-        <section class="report-section" id="decision-node">
-            <h2 class="section-title">FINAL PROTOCOL: DECISION NODE</h2>
-            <div class="gate-grid">
-                <div class="gate reveal" data-gate="A">GATE A: LEADERSHIP</div>
-                <div class="gate reveal" data-gate="B">GATE B: DESTRUCTION</div>
-                <div class="gate reveal" data-gate="C">GATE C: SUBMISSION</div>
-            </div>
-            <div class="final-message reveal">
-                <p>"DÜNYANIN ORTAK KARARINI VERIN"</p>
-                <small>REQUIRES 100% TEAM UNIFICATION</small>
-            </div>
-        </section>
     </main>
 
-    <footer class="report-footer">
-        <div class="container container-flex">
-            <p>PROJECT DESIGN BY UTKUHAN AKAR | HANAK STUDIOS | © 2026</p>
-            <p>ID: OTUKAN-OKA-X99 // SESSION TERMINATED</p>
+    <footer class="aaa-footer">
+        <div class="footer-content">
+            <div class="footer-logo">HANAK STUDIOS</div>
+            <p>CHIEF RESEARCHER: UTKUHAN AKAR | PROJECT: VIRENTAH © 2026</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+                <a href="#audio-init">Re-Initialize Audio</a>
+            </div>
         </div>
     </footer>
 

@@ -1,109 +1,107 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Reveal animations on scroll
+    // 1. Audio Initialization & Playback
+    const btnInitAudio = document.getElementById('btn-init-audio');
+    const audioOverlay = document.getElementById('audio-init');
+    const ambientAudio = document.getElementById('ambient-audio');
+
+    if (btnInitAudio) {
+        btnInitAudio.addEventListener('click', () => {
+            // Unhide the interface and hide the overlay
+            audioOverlay.classList.add('hidden');
+            
+            // Start audio cleanly after explicit user interaction
+            if (ambientAudio) {
+                ambientAudio.volume = 0.4;
+                ambientAudio.play().catch(e => console.warn("Audio play blocked: ", e));
+            }
+        });
+    }
+
+    // 2. Top Navbar Scroll Effect
+    const topNav = document.querySelector('.top-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            topNav.classList.add('scrolled');
+        } else {
+            topNav.classList.remove('scrolled');
+        }
+    });
+
+    // 3. Mega Menu (Inventory) Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const megaMenu = document.getElementById('mega-menu');
+
+    const openInventory = () => {
+        megaMenu.classList.add('open');
+        document.body.style.overflow = 'hidden'; 
+    };
+
+    const closeInventory = () => {
+        megaMenu.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    };
+
+    if(menuToggle && closeMenu) {
+        menuToggle.addEventListener('click', openInventory);
+        closeMenu.addEventListener('click', closeInventory);
+    }
+
+    if(megaMenu) {
+        megaMenu.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.menu-bg')) {
+                closeInventory();
+            }
+        });
+    }
+
+    // 4. Reveal Animations (Intersection Observer)
     const reveals = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    let threatAnimated = false;
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                
+                // Threat Bar logic
+                if (entry.target.classList.contains('threat-module') && !threatAnimated) {
+                    threatAnimated = true;
+                    const threatFill = document.getElementById('threat-fill');
+                    const threatPercent = document.getElementById('threat-percent');
+                    if (threatFill) {
+                        setTimeout(() => {
+                            threatFill.style.width = '68%';
+                            let count = 0;
+                            const countInterval = setInterval(() => {
+                                count++;
+                                threatPercent.innerText = count + '%';
+                                if(count >= 68) clearInterval(countInterval);
+                            }, 40);
+                        }, 500);
+                    }
+                }
+                
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
-    
-    reveals.forEach(reveal => revealObserver.observe(reveal));
+    }, revealOptions);
 
-    // 2. Dynamic Log Streamer
-    const logList = document.getElementById('log-list');
-    const messages = [
-        "> SUBJECT 001 STATUS: VITAL",
-        "> SECTOR 3: PREDATOR DETECTED",
-        "> TEMPERATURE DROP IN LOWLANDS",
-        "> ANOMALY: BLACK KINGDOM VOID",
-        "> CACHE SYNC: OTUKAN-OKA-X99",
-        "> DECRYPTION COMPLETE: SIYAH KRALLIK",
-        "> HYDRATION STATUS: CRITICAL",
-        "> BIOMETRIC LINK STABLE",
-        "> SYSTEM OVERRIDE ATTEMPT..."
-    ];
-
-    if (logList) {
-        setInterval(() => {
-            const li = document.createElement('li');
-            li.innerText = messages[Math.floor(Math.random() * messages.length)];
-            logList.appendChild(li);
-            if (logList.children.length > 5) {
-                logList.removeChild(logList.children[0]);
-            }
-        }, 4000);
-    }
-
-    // 3. Radar Blip Movement
-    const blip = document.querySelector('.blip');
-    if (blip) {
-        setInterval(() => {
-            blip.style.top = Math.random() * 80 + 10 + '%';
-            blip.style.left = Math.random() * 80 + 10 + '%';
-        }, 2000);
-    }
-
-    // 4. Redacted Section Glitch
-    const redactedSection = document.getElementById('sector-7');
-    if (redactedSection) {
-        const glitchText = redactedSection.querySelector('.glitch-text-hidden');
-        redactedSection.addEventListener('mouseenter', () => {
-            let count = 0;
-            const interval = setInterval(() => {
-                redactedSection.style.background = count % 2 === 0 ? 'rgba(255, 51, 51, 0.1)' : '#111';
-                glitchText.style.display = 'block';
-                count++;
-                if (count > 6) {
-                    clearInterval(interval);
-                    glitchText.style.display = 'block';
-                    redactedSection.style.background = 'rgba(255, 51, 51, 0.2)';
-                }
-            }, 100);
-        });
-        redactedSection.addEventListener('mouseleave', () => {
-            glitchText.style.display = 'none';
-            redactedSection.style.background = '#111';
-        });
-    }
-
-    // 5. Typewriter Effect
-    const typewriter = document.querySelector('.typewriter');
-    if (typewriter) {
-        const text = typewriter.innerText;
-        typewriter.innerText = '';
-        let i = 0;
-        const type = () => {
-            if (i < text.length) {
-                typewriter.innerText += text.charAt(i);
-                i++;
-                setTimeout(type, 100);
-            }
-        };
-        setTimeout(type, 500);
-    }
-
-    // 6. Final Gate selection logging
-    document.querySelectorAll('.gate').forEach(gate => {
-        gate.addEventListener('click', () => {
-            const gateName = gate.innerText;
-            if (logList) {
-                const li = document.createElement('li');
-                li.style.color = '#ffcc00';
-                li.innerText = `> ACCESSING ${gateName}...`;
-                logList.appendChild(li);
-            }
-        });
+    reveals.forEach(reveal => {
+        revealOnScroll.observe(reveal);
     });
 
-    // 7. Parallax Effect
+    // 5. Hero Parallax Effect
+    const heroBg = document.querySelector('.hero-bg');
     window.addEventListener('scroll', () => {
-        const scroll = window.pageYOffset;
-        const feed = document.querySelector('.hero-feed');
-        if (feed) {
-            feed.style.transform = `translate(-50%, calc(-50% + ${scroll * 0.2}px)) scale(1.1)`;
+        const scrollOffset = window.scrollY;
+        if (heroBg && scrollOffset < window.innerHeight) {
+            heroBg.style.transform = `translateY(${scrollOffset * 0.4}px)`;
         }
     });
 });
