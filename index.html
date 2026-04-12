@@ -3,96 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIRENTAH | Hardcore Survival Exploration</title>
-    <meta name="description" content="Survive on a storm-battered island, earn the trust of ancient tribes, and uncover the truth. Official Landing Page for VIRENTAH.">
+    <title>UTKUHAN AKAR | PROJECT VIRENTAH DOSSIER</title>
+    <meta name="description" content="Official Virentah Project Dossier by Chief Researcher Utkuhan Akar. Classified tribal observation logs for Operation HAN TRIBE. ACCESS RESTRICTED.">
+    <meta name="author" content="Utkuhan Akar">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Outfit:wght@300;600;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="glass-nav">
-        <div class="container">
-            <h1 class="logo">VIRENTAH</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#tribes">Tribes</a></li>
-                    <li><a href="#survival">Survival</a></li>
-                    <li><a href="https://github.com/utkuhanakar/virentah" class="btn-sm">GitHub</a></li>
-                </ul>
-            </nav>
+<body class="report-theme">
+    <div class="vignette"></div>
+    <div class="scanlines"></div>
+
+    <header class="report-header">
+        <div class="container container-flex">
+            <div class="header-left">
+                <div class="terminal-tag">SYSTEM: ENCRYPTED</div>
+                <div class="serial-no">ID: OTUKAN-OKA-X99</div>
+            </div>
+            <div class="header-right">
+                <div class="researcher-signature">Chief Researcher: <span>Utkuhan Akar</span></div>
+                <div class="classification">CONFIDENTIAL // HANAK STUDIOS</div>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2 class="reveal">The island is an experiment.</h2>
-            <p class="reveal delay-1">You are the first uncontrolled variable.</p>
-            <div class="cta-group reveal delay-2">
-                <a href="#about" class="btn-primary">Explore the Mystery</a>
-                <a href="https://github.com/utkuhanakar/HAN_TRIBE" class="btn-secondary">View Dev Repo</a>
+    <div class="bio-feed-strip">
+        <div class="container container-flex">
+            <div class="ekg-container">
+                <span class="label">SUBJECT #001 VITALS [EKG]</span>
+                <svg class="ekg-svg" viewBox="0 0 100 20">
+                    <path class="ekg-path" d="M0,10 L5,10 L7,2 L10,18 L12,10 L20,10 L22,4 L25,16 L27,10 L40,10 L42,2 L45,18 L47,10 L60,10 L100,10" />
+                </svg>
+            </div>
+            <div class="radar-container">
+                <div class="radar">
+                    <div class="radar-line"></div>
+                    <div class="blip pulse" style="top: 30%; left: 40%;"></div>
+                </div>
+                <span class="label">SECTOR SCANNER [ACTIVE]</span>
+            </div>
+            <div class="system-logs">
+                <ul id="log-list">
+                    <li>> INITIALIZING OOS-99...</li>
+                    <li>> LINK STABLE: SECTOR 1</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-dossier">
+        <div class="grid-overlay"></div>
+        <div class="hero-image-wrap">
+            <img src="hero.png" alt="Satellite View - Sector Analysis" class="hero-feed">
+        </div>
+        <div class="hero-meta">
+            <h1 class="typewriter">PROJECT: VIRENTAH</h1>
+            <p class="subtitle">Operation: HAN TRIBE. Observer: Otukan Oka</p>
+            <div class="status-bar">
+                <div class="status-indicator alert"></div>
+                <span>ANOMALY DETECTED: BLACK KINGDOM</span>
             </div>
         </div>
     </section>
 
-    <main>
-        <section id="about" class="section container">
-            <div class="grid">
-                <div class="content reveal">
-                    <span class="badge">HARDCORE SURVIVAL</span>
-                    <h3>Knowledge Over Levels</h3>
-                    <p>In VIRENTAH, there are no XP bars or skill trees. Your progression is measured by the recipes you master, the paths you discover, and the deep relationships you forge with the island's three distinct tribes.</p>
+    <main class="container">
+        <!-- THE ARMORY SECTION -->
+        <section class="report-section" id="armory">
+            <h2 class="section-title">THE ARMORY: TACTICAL SCHEMATICS</h2>
+            <div class="blueprint-grid">
+                <div class="blueprint reveal">
+                    <div class="bp-header">ID: KAYA-AXE-01</div>
+                    <div class="bp-visual">
+                        <div class="bp-drawing">
+                            <span class="crosshair">+</span>
+                        </div>
+                    </div>
+                    <h3>KAYA'NIN REHBERİ [BONE AXE]</h3>
+                    <p class="data-log">Kullanıcı: Elder Kaya. Materyal: İşlenmiş Kemik & Liana Bağlantısı. Etki: %40 daha hızlı kaynak toplama.</p>
                 </div>
-                <div class="image-box reveal">
-                    <div class="glass-card">
-                        <h4>Diegetic Navigation</h4>
-                        <p>No minimaps. No floating markers. Navigate by landmarks, sound, and tribal guidance.</p>
+                <div class="blueprint reveal">
+                    <div class="bp-header">ID: DORAN-SPEAR-03</div>
+                    <div class="bp-visual">
+                        <div class="bp-drawing">
+                            <span class="crosshair">+</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tribes" class="section dark">
-            <div class="container">
-                <h3 class="text-center reveal">Three Tribes. Three Truths.</h3>
-                <div class="tribe-grid">
-                    <div class="tribe-card reveal">
-                        <div class="icon">🏹</div>
-                        <h4>The Hunters</h4>
-                        <p>Aggressive warrior culture. Earn their trust through combat worthiness.</p>
-                    </div>
-                    <div class="tribe-card reveal delay-1">
-                        <div class="icon">🌿</div>
-                        <h4>The Gatherers</h4>
-                        <p>Peaceful knowledge-keepers. The source of medicine and exploration guidance.</p>
-                    </div>
-                    <div class="tribe-card reveal delay-2">
-                        <div class="icon">✨</div>
-                        <h4>The Mystics</h4>
-                        <p>Reclusive and suspicious. They hold the key to the island's creation myth.</p>
-                    </div>
+                    <h3>DORAN'IN PENÇESİ [IRON SPEAR]</h3>
+                    <p class="data-log">Kullanıcı: Chief Doran. Materyal: Siyah Demir. Not: Uzun mesafe hit-detection için optimize edildi.</p>
                 </div>
             </div>
         </section>
 
-        <section id="survival" class="section container text-center">
-            <h3 class="reveal">Everything is Engineered.</h3>
-            <p class="reveal">From the storm patterns to the predator behaviors, nothing on this island is natural.</p>
-            <div class="stat-rings reveal delay-1">
-                <div class="ring"><span>Health</span></div>
-                <div class="ring"><span>Stamina</span></div>
-                <div class="ring"><span>Hunger</span></div>
-                <div class="ring"><span>Thirst</span></div>
+        <!-- SPECIMEN LAB SECTION -->
+        <section class="report-section" id="specimen-lab">
+            <h2 class="section-title">SPECIMEN LAB: BIOLOGICAL ARCHIVE</h2>
+            <div class="specimen-grid">
+                <div class="specimen-card reveal glass">
+                    <div class="specimen-tag">CAT: MEDICAL</div>
+                    <h3>ALOE VERA [YARA KAPATICI]</h3>
+                    <div class="dna-helix"></div>
+                    <p class="data-log">Bulunduğu Yer: S1 - Spawn Shore. Etki: Kanama durdurma ve %15 HP yenileme.</p>
+                </div>
+                <div class="specimen-card reveal glass urgent">
+                    <div class="specimen-tag">CAT: ANOMALY</div>
+                    <h3>SIYAH KRALLIK [VIRUS]</h3>
+                    <p class="data-log">DURUM: AKTİF. Bu kabile bir virüs gibi yayılmakta. Diğer kabileleri asimile ederek yok eder.</p>
+                </div>
+            </div>
+        </section>
+        <section class="report-section" id="sectors">
+            <h2 class="section-title">SECTOR ANALYSIS [SITE-B]</h2>
+            <div class="data-grid">
+                <div class="data-card reveal" data-status="STABLE">
+                    <span class="sector-id">S1</span>
+                    <h3>SPAWN SHORE</h3>
+                    <p class="data-log">INITIAL ARRIVAL POINT. RESOURCE DENSITY: MODERATE. DANGER LEVEL: MINIMAL. WEATHER PARAMETERS: CLEAR (40%).</p>
+                </div>
+                <div class="data-card reveal" data-status="CAUTION">
+                    <span class="sector-id">S3</span>
+                    <h3>DENSE JUNGLE</h3>
+                    <p class="data-log">CANOPY DENSITY: HIGH. PREDATOR ACTIVITY: PERSISTENT. STEALTH PARAMETERS REQUIRED FOR SUBJECT SURVIVAL.</p>
+                </div>
+                <div class="data-card reveal" data-status="HIGH">
+                    <span class="sector-id">S4</span>
+                    <h3>SWAMP LOWLANDS</h3>
+                    <p class="data-log">TOXICITY LEVELS: ELEVATED. ANOMALY DETECTED: GIANT ANACONDA. SUBJECT DISORIENTATION OBSERVED.</p>
+                </div>
+                <div class="data-card reveal redacted" id="sector-7">
+                    <span class="sector-id">S7</span>
+                    <h3>[REDACTED]</h3>
+                    <p class="data-log">[ACCESS DENIED] DATA CORRUPTION DETECTED. ENCRYPTION LEVEL OVERRIDE REQUIRED.</p>
+                    <div class="glitch-text-hidden">FACILITY CORE: EXPERIMENT SITE ZERO</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-section" id="subjects">
+            <h2 class="section-title">OBSERVED SOCIAL GROUPS [TRIBAL]</h2>
+            <div class="tribe-report">
+                <div class="tribe-entry reveal">
+                    <div class="entry-header">
+                        <h4>THE HUNTERS [AGGRESSIVE]</h4>
+                        <span class="vector">VECTOR: -30</span>
+                    </div>
+                    <p>Warrior-tier subjects. Highly territorial. High combat proficiency. Observation strategy: Diplomatic caution required.</p>
+                </div>
+                <div class="tribe-entry reveal">
+                    <div class="entry-header">
+                        <h4>THE GATHERERS [NEUTRAL]</h4>
+                        <span class="vector">VECTOR: 000</span>
+                    </div>
+                    <p>Resource-tier subjects. Oldest civilization. Key source of medical biological data. Subject trust established as viable.</p>
+                </div>
+                <div class="tribe-entry reveal">
+                    <div class="entry-header">
+                        <h4>THE MYSTICS [RECLUSIVE]</h4>
+                        <span class="vector">VECTOR: -50</span>
+                    </div>
+                    <p>Anomaly observers. Religious/Mythological interpretation of Experiment Operators detected. Access highly restricted.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-section" id="parameters">
+            <h2 class="section-title">VITAL SIGN PARAMETERS</h2>
+            <div class="parameter-grid">
+                <div class="param-box reveal">
+                    <label>METABOLIC RATE (HUNGER)</label>
+                    <div class="param-bar"><div class="fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="param-box reveal">
+                    <label>HYDRATION LEVELS (THIRST)</label>
+                    <div class="param-bar"><div class="fill" style="width: 60%;"></div></div>
+                </div>
+                <div class="param-box reveal">
+                    <label>THERMAL HOMEOSTASIS</label>
+                    <div class="param-bar"><div class="fill" style="width: 45%;"></div></div>
+                </div>
+            </div>
+        </section>
+        <!-- THE FINAL GATES -->
+        <section class="report-section" id="decision-node">
+            <h2 class="section-title">FINAL PROTOCOL: DECISION NODE</h2>
+            <div class="gate-grid">
+                <div class="gate reveal" data-gate="A">GATE A: LEADERSHIP</div>
+                <div class="gate reveal" data-gate="B">GATE B: DESTRUCTION</div>
+                <div class="gate reveal" data-gate="C">GATE C: SUBMISSION</div>
+            </div>
+            <div class="final-message reveal">
+                <p>"DÜNYANIN ORTAK KARARINI VERIN"</p>
+                <small>REQUIRES 100% TEAM UNIFICATION</small>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Hanak Studios. All rights reserved.</p>
-            <p>Built as part of the Dev-Learning journey.</p>
+    <footer class="report-footer">
+        <div class="container container-flex">
+            <p>PROJECT DESIGN BY UTKUHAN AKAR | HANAK STUDIOS | © 2026</p>
+            <p>ID: OTUKAN-OKA-X99 // SESSION TERMINATED</p>
         </div>
     </footer>
 
